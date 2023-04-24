@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "clear",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.6.9",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
@@ -22,5 +25,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.0"
-  }
+  },
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
