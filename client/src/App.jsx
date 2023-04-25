@@ -15,14 +15,13 @@ const localizer = momentLocalizer(moment);
 
 const App = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-  const [post, setPost] = useState(false);
   const [allEvents, setAllEvents] = useState([]);
 
   // Manejadores de Eventos
-  const handleAddEvent = async () => {
+  const addEvent = async () => {
     await axios.post(API + "/addevent", newEvent).then((response) => {
       console.log(response.data);
-      setPost(!post);
+      getEvents();
     });
   };
 
@@ -39,23 +38,14 @@ const App = () => {
           end: new Date(Date.parse(data.end)),
         });
       });
-      console.log(dataparser)
       setAllEvents(dataparser);
     });
   };
 
-  // [
-  //   {
-  //     title: response.data[0].title,
-  //     start: new Date(Date.parse(response.data[0].start)),
-  //     end: new Date(Date.parse(response.data[0].end)),
-  //   },
-  // ]
-
   // Carga los eventos desde el back al cargar la pagina y al agregarse un nuevo evento
   useEffect(() => {
     getEvents();
-  }, [post]);
+  }, []);
 
   return (
     <div className="App">
@@ -80,7 +70,7 @@ const App = () => {
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
-        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
+        <button style={{ marginTop: "10px" }} onClick={addEvent}>
           Add Event
         </button>
       </div>
