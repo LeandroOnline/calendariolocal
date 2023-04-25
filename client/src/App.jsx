@@ -1,14 +1,9 @@
-import format from "date-fns/format";
-import getDay from "date-fns/getDay";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/startOfWeek";
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import DatePicker from "react-datepicker";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
-import data from "date-fns/locale/en-US";
-
 
 import { useEffect, useState } from "react";
 
@@ -16,17 +11,7 @@ import axios from "axios";
 
 const API = "http://localhost:3000/api";
 
-const locales = {
-    "en-US": data,
-};
-const localizer = dateFnsLocalizer({
-    format,
-    parse,
-    startOfWeek,
-    getDay,
-    locales,
-});
-
+const localizer = momentLocalizer(moment);
 
 const App = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
@@ -44,10 +29,28 @@ const App = () => {
   // Get eventos desde el back
   const getEvents = async () => {
     await axios.get(API + "/getevents").then((response) => {
-      setAllEvents(response.data);
-      console.log(response.data)
+      // Parseo el dato de fecha a Date para leerse correctamente
+      const alldata = response.data;
+      let dataparser = [];
+      alldata.map((data) => {
+        dataparser.push({
+          title: data.title,
+          start: new Date(Date.parse(data.start)),
+          end: new Date(Date.parse(data.end)),
+        });
+      });
+      console.log(dataparser)
+      setAllEvents(dataparser);
     });
   };
+
+  // [
+  //   {
+  //     title: response.data[0].title,
+  //     start: new Date(Date.parse(response.data[0].start)),
+  //     end: new Date(Date.parse(response.data[0].end)),
+  //   },
+  // ]
 
   // Carga los eventos desde el back al cargar la pagina y al agregarse un nuevo evento
   useEffect(() => {
@@ -77,11 +80,10 @@ const App = () => {
           selected={newEvent.end}
           onChange={(end) => setNewEvent({ ...newEvent, end })}
         />
-        <button style={{ marginTop: "10px" }} onClick={() => handleAddEvent()}>
+        <button style={{ marginTop: "10px" }} onClick={handleAddEvent}>
           Add Event
         </button>
       </div>
-
 
       <Calendar
         localizer={localizer}
