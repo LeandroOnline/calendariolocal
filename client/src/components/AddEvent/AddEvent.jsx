@@ -9,11 +9,11 @@ import axios from "axios";
 const AddEvent = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
-  console.log(allEvents);
+  // console.log(allEvents);
   // Manejadores de Eventos
   const addEvent = async () => {
     await axios.post(API + "/addevent", newEvent).then((response) => {
-      console.log(response.data);
+      // console.log(response.data);
       getEvents();
     });
   };
