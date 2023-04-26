@@ -1,7 +1,4 @@
-import { Calendar, momentLocalizer } from "react-big-calendar";
 import DatePicker from "react-datepicker";
-import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 
@@ -11,12 +8,10 @@ import axios from "axios";
 
 const API = "http://localhost:3000/api";
 
-const localizer = momentLocalizer(moment);
-
 const App = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
-
+  console.log(allEvents);
   // Manejadores de Eventos
   const addEvent = async () => {
     await axios.post(API + "/addevent", newEvent).then((response) => {
@@ -74,14 +69,6 @@ const App = () => {
           Add Event
         </button>
       </div>
-
-      <Calendar
-        localizer={localizer}
-        events={allEvents}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 500, margin: "50px" }}
-      />
     </div>
   );
 };
