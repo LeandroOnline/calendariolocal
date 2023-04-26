@@ -4,6 +4,7 @@ const Calendar = () => {
   const [fechaActual, setFechaActual] = useState(new Date());
   const añoActual = fechaActual.getFullYear();
   const mesActual = fechaActual.getMonth();
+  console.log("Fecha Actual: " + fechaActual);
 
   const diasEnMes = new Date(añoActual, mesActual + 1, 0).getDate(); // Obtiene el número de días en el mes actual
   const dias = [];
