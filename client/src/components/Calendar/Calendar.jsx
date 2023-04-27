@@ -1,46 +1,19 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 
 const Calendar = () => {
-  const [fechaActual, setFechaActual] = useState(new Date());
-  const añoActual = fechaActual.getFullYear();
-  const mesActual = fechaActual.getMonth();
-  console.log("Fecha Actual: " + fechaActual);
-
-  const diasEnMes = new Date(añoActual, mesActual + 1, 0).getDate(); // Obtiene el número de días en el mes actual
-  const dias = [];
-  for (let dia = 1; dia <= diasEnMes; dia++) {
-    dias.push({
-      dia,
-      mes: mesActual,
-      año: añoActual,
-    });
-  }
-
-  const diasSemana = ["D", "L", "M", "M", "J", "V", "S"];
+  const [value, setValue] = useState(new Date());
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            {diasSemana.map((dia, index) => (
-              <th key={`dia-${index}`}>{dia}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {[...Array(Math.ceil(diasEnMes / 7)).keys()].map((semana) => (
-            <tr key={semana}>
-              {[...Array(7).keys()].map((diaSemana) => {
-                const diaIndex = semana * 7 + diaSemana;
-                const dia = dias[diaIndex];
-                return <td key={diaIndex}>{dia && dia.dia}</td>;
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <StaticDatePicker
+        value={value}
+        // disableFuture
+        onChange={(newValue) => setValue(newValue)}
+      />
+    </LocalizationProvider>
   );
 };
 
