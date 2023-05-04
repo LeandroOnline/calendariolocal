@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
+import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
+import dayjs from "dayjs";
+import { useState } from "react";
 
 const Calendar = () => {
-  const [value, setValue] = useState(new Date());
-
+  const [value, setValue] = useState(dayjs(Date.now()));
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <StaticDatePicker
-        value={value}
-        // disableFuture
-        onChange={(newValue) => setValue(newValue)}
-      />
-    </LocalizationProvider>
+    <>
+      <DateCalendar value={value} onChange={(newValue) => setValue(newValue)} />
+    </>
   );
 };
 
