@@ -1,5 +1,3 @@
-import Calendar from "../../components/Calendar/Calendar";
-import AddEvent from "../../components/AddEvent/AddEvent";
 import home from "./Home.module.css";
 
 // Home con todos sus componentes
@@ -7,9 +5,8 @@ import home from "./Home.module.css";
 const Home = () => {
   return (
     <div>
-      <div>Estoy en el Home perro </div>
-      <AddEvent />
-      <Calendar />
+      <h1>NombrePagina</h1>
+      <h2>Crea tu sitio web, vende y publica eventos GRATIS</h2>
     </div>
   );
 };

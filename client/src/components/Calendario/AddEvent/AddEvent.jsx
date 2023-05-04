@@ -1,4 +1,4 @@
-import API from "../../assets/API/api";
+import API from "../../../assets/API/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { DatePicker, StaticTimePicker } from "@mui/x-date-pickers";
@@ -50,7 +50,6 @@ const AddEvent = () => {
         value={time}
         onChange={(time) => setTime(time)}
       />
-      {console.log(time)}
     </>
   );
 };
