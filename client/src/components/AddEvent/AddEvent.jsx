@@ -1,5 +1,5 @@
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 import API from "../../assets/API/api";
 
 import { useEffect, useState } from "react";
@@ -41,7 +41,7 @@ const AddEvent = () => {
   }, []);
   return (
     <>
-      <h2>Add New Event</h2>
+      {/* <h2>Add New Event</h2>
       <div>
         <input
           type="text"
@@ -64,7 +64,7 @@ const AddEvent = () => {
         <button style={{ marginTop: "10px" }} onClick={addEvent}>
           Add Event
         </button>
-      </div>
+      </div> */}
     </>
   );
 };
