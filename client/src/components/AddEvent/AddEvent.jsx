@@ -1,13 +1,14 @@
 import API from "../../assets/API/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { DatePicker } from "@mui/x-date-pickers";
+import { DatePicker, StaticTimePicker } from "@mui/x-date-pickers";
 
 const AddEvent = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
   const [valueStart, setValueStart] = useState(null);
   const [valueEnd, setValueEnd] = useState(null);
+  const [time, setTime] = useState(null);
 
   const addEvent = async () => {
     await axios.post(API + "/addevent", newEvent).then((response) => {
@@ -44,6 +45,12 @@ const AddEvent = () => {
         value={valueEnd}
         onChange={(newValueEnd) => setValue(newValueEnd)}
       />
+      <StaticTimePicker
+        orientation="landscape"
+        value={time}
+        onChange={(time) => setTime(time)}
+      />
+      {console.log(time)}
     </>
   );
 };
