@@ -8,10 +8,8 @@ const Home = () => {
   return (
     <div>
       <div>Estoy en el Home perro </div>
-      <div>
-        <AddEvent />
-        <Calendar />
-      </div>
+      <AddEvent />
+      <Calendar />
     </div>
   );
 };
