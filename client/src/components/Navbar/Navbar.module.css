@@ -1,1 +1,26 @@
-/* estilo */
+.container{
+    width: 100%;
+    background-color: rgb(180, 180, 180);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px
+}
+
+.hide{
+    display: flex;
+
+}
+
+.options{
+    display: none;
+    gap: 15px;
+    margin-top: 150px;
+}
+
+.options:hover{
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+}
