@@ -6,7 +6,10 @@ const Home = () => {
   return (
     <div>
       <h1>NombrePagina</h1>
-      <h2>Crea tu sitio web, vende y publica eventos GRATIS</h2>
+      <h2>
+        Enterate de todos los eventos de la ciudad y publica tus eventos GRATIS
+        :D{" "}
+      </h2>
     </div>
   );
 };
