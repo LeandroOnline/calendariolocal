@@ -2,6 +2,9 @@ import API from "../../../assets/API/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// Disponible para usuarios logueados
+//Panel de administrador
+
 const AddEvent = () => {
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
   const [allEvents, setAllEvents] = useState([]);
