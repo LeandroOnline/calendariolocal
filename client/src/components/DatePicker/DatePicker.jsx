@@ -1,5 +1,4 @@
 import { useState } from "react";
-import AddEvent from "../AddEvent/AddEvent";
 import { DatePicker, Space } from "antd";
 const { RangePicker } = DatePicker;
 
