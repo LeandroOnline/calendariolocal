@@ -1,5 +1,5 @@
-import CalendarComponent from "../../components/Calendario/CalendarComponent/CalendarComponent";
-import CalendarDatePicker from "../../components/Calendario/CalendarComponent/DatePicker";
+import CalendarComponent from "../../components/CalendarComponent/CalendarComponent";
+import CalendarDatePicker from "../../components/DatePicker/DatePicker";
 
 const Eventos = () => {
   return (
