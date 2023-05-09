@@ -4,19 +4,21 @@ import { DatePicker, Space } from "antd";
 const { RangePicker } = DatePicker;
 
 const CalendarDatePicker = () => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(false);
+  console.log(date);
+
+  if (date) {
+    console.log(date[0]);
+  }
+
   return (
-    <>
-      <RangePicker
-        renderExtraFooter={() => "extra footer"}
-        showTime
-        // value={date}
-        onChange={(e) => {
-          setDate(e);
-        }}
-      />
-      {console.log(date)}
-    </>
+    <RangePicker
+      renderExtraFooter={() => "extra footer"}
+      showTime
+      onChange={(e) => {
+        setDate(e);
+      }}
+    />
   );
 };
 
