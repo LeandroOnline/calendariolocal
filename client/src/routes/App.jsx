@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import CalendarPage from "../pages/CalendarPage/CalendarPage";
 import NotFound from "../pages/404/NotFound";
 
+
 const App = () => {
   return (
     <div>
@@ -11,6 +12,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/login" element={<Login />} />
           <Route exact path="/calendar" element={<CalendarPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
