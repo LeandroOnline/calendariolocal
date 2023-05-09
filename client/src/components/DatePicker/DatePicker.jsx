@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
 const { RangePicker } = DatePicker;
 
 const CalendarDatePicker = () => {
@@ -11,13 +11,16 @@ const CalendarDatePicker = () => {
   }
 
   return (
-    <RangePicker
-      renderExtraFooter={() => "extra footer"}
-      showTime
-      onChange={(e) => {
-        setDate(e);
-      }}
-    />
+    <>
+      <input type="text" placeholder="Titulo del Evento"/>
+      <RangePicker
+        renderExtraFooter={() => "extra footer"}
+        showTime
+        onChange={(e) => {
+          setDate(e);
+        }}
+      />
+    </>
   );
 };
 
