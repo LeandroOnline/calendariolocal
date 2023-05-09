@@ -10,7 +10,7 @@ const NotFound = () => {
       subTitle="Lo sentimos, la URL que intentas visitar no fue encontrada"
       extra={
         <Button type="primary" onClick={() => Navigate("/")}>
-          Volver al Home
+          Volver al Inicio
         </Button>
       }
     />
