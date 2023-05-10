@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Home from "../pages/Home/Home";
 import CalendarPage from "../pages/CalendarPage/CalendarPage";
 import NotFound from "../pages/404/NotFound";
-
+import Login from "../pages/LoginPage/LoginPage"
 
 const App = () => {
   return (
