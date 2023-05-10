@@ -34,12 +34,12 @@ const items = [
         label: "",
         children: [
           {
-            label: "Registro",
-            key: "Registro",
+            label: <Link to="/login">Iniciar Sesión</Link>,
+            key: "Iniciar",
           },
           {
-            label: "Iniciar Sesión",
-            key: "Iniciar",
+            label: <Link to="/signup">Registrarse</Link>,
+            key: "Registro",
           },
           {
             label: "Cerrar Sesión",
