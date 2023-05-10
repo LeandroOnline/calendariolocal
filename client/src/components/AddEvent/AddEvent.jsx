@@ -4,15 +4,23 @@ const { RangePicker } = DatePicker;
 
 const CalendarDatePicker = () => {
   const [date, setDate] = useState(false);
-  console.log(date);
+  const [title, setTitle] = useState("");
+  const [detail, setDetail] = useState("");
 
-  if (date) {
-    console.log(date[0]);
+  const sendEvent = () => {
+    console.log(title);
+    console.log(date);
+    console.log(detail);
   }
 
   return (
     <>
-      <input type="text" placeholder="Titulo del Evento"/>
+      <input
+        type="text"
+        placeholder="Titulo del Evento"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
       <RangePicker
         renderExtraFooter={() => "extra footer"}
         showTime
@@ -20,6 +28,13 @@ const CalendarDatePicker = () => {
           setDate(e);
         }}
       />
+      <input
+        type="text"
+        placeholder="Descripcion"
+        value={detail}
+        onChange={(e) => setDetail(e.target.value)}
+      />
+      <button onClick={sendEvent}>Agregar</button>
     </>
   );
 };
