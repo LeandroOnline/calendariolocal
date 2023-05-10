@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import CalendarPage from "../pages/CalendarPage/CalendarPage";
 import NotFound from "../pages/404/NotFound";
 import Login from "../pages/LoginPage/LoginPage"
+import AddEvent from "../components/AddEvent/AddEvent";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/dash" element={<AddEvent />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/calendar" element={<CalendarPage />} />
           <Route path="*" element={<NotFound />} />
