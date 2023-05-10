@@ -6,11 +6,11 @@ const eventoSchema = mongoose.Schema({
         required: true
     },
     start: {
-        type: Date,
+        type: Object,
         required: true
     },
     end:{
-        type: Date,
+        type: Object,
         required: true
     },
     details:{
