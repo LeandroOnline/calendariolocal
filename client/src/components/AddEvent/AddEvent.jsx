@@ -1,23 +1,27 @@
-import API from "../../assets/API/api";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+import { DatePicker } from "antd";
+const { RangePicker } = DatePicker;
 
-// Disponible para usuarios logueados
-//Panel de administrador
+const CalendarDatePicker = () => {
+  const [date, setDate] = useState(false);
+  console.log(date);
 
-const AddEvent = () => {
-  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
-  const [allEvents, setAllEvents] = useState([]);
-  const [valueStart, setValueStart] = useState(null);
-  const [valueEnd, setValueEnd] = useState(null);
-  const [time, setTime] = useState(null);
+  if (date) {
+    console.log(date[0]);
+  }
 
-  // const addEvent = async () => {
-  //   await axios.post(API + "/addevent", newEvent).then((response) => {
-  //     getEvents();
-  //   });
-  // };
-
-  return <></>;
+  return (
+    <>
+      <input type="text" placeholder="Titulo del Evento"/>
+      <RangePicker
+        renderExtraFooter={() => "extra footer"}
+        showTime
+        onChange={(e) => {
+          setDate(e);
+        }}
+      />
+    </>
+  );
 };
-export default AddEvent;
+
+export default CalendarDatePicker;
