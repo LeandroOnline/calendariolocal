@@ -38,7 +38,7 @@ const items = [
             key: "Iniciar",
           },
           {
-            label: <Link to="/signup">Registo</Link>,
+            label: <Link to="/signup">Registrarse</Link>,
             key: "Registro",
           },
           {
