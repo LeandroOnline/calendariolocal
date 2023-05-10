@@ -1,9 +1,9 @@
-import SignLn from "../../components/Login/Login";
+import Login from "../../components/Login/Login";
 
 const LoginPage = () => {
   return (
     <div>
-      <SignLn />
+      <Login />
     </div>
   );
 };
