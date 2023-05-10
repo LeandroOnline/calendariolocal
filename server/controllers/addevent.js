@@ -6,6 +6,7 @@ const addevent = async (req, res) => {
       title: req.body.title,
       start: req.body.start,
       end: req.body.end,
+      details: req.body.details,
     });
     await add.save();
     res.send("Evento Agregado");
