@@ -70,7 +70,7 @@ const Login = () => (
         span: 16,
       }}
     >
-      <Link to="/login/reset"> Si no posees una cuenta hacé click aquí</Link>
+      <Link to="/signup"> Si no posees una cuenta hacé click aquí</Link>
       <br></br>
       <Link to="/login/reset">¿Olvidaste tu contraseña?</Link>
       <br></br>
