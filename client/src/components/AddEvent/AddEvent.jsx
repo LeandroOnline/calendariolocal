@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DatePicker } from "antd";
+import { AutoComplete, DatePicker, Input } from "antd";
 import axiosAddEvent from "../../api/axiosAddEvent";
 const { RangePicker } = DatePicker;
 
@@ -15,9 +15,23 @@ const CalendarDatePicker = () => {
       end: date[1],
       detail,
     };
-
     await axiosAddEvent(event);
   };
+
+  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+  const onWebsiteChange = (value) => {
+    if (!value) {
+      setAutoCompleteResult([]);
+    } else {
+      setAutoCompleteResult(
+        [".com", ".org", ".net"].map((domain) => `${value}${domain}`)
+      );
+    }
+  };
+  const websiteOptions = autoCompleteResult.map((website) => ({
+    label: website,
+    value: website,
+  }));
 
   return (
     <>
@@ -40,6 +54,13 @@ const CalendarDatePicker = () => {
         value={detail}
         onChange={(e) => setDetail(e.target.value)}
       />
+      <AutoComplete
+        options={websiteOptions}
+        onChange={onWebsiteChange}
+        placeholder="website"
+      >
+        <Input />
+      </AutoComplete>
       <button onClick={sendEvent}>Agregar</button>
     </>
   );
