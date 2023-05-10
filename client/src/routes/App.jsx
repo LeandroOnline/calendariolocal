@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./reset.css";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import CalendarPage from "./pages/CalendarPage/CalendarPage";
-import Login from "./components/Login/Login";
-import NotFound from "./pages/404/NotFound";
+import Navbar from "../components/Navbar/Navbar";
+import Home from "../pages/Home/Home";
+import CalendarPage from "../pages/CalendarPage/CalendarPage";
+import NotFound from "../pages/404/NotFound";
+
 
 const App = () => {
   return (
