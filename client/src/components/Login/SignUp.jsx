@@ -1,5 +1,4 @@
-import { Button, Checkbox, Form, Input, Select } from "antd";
-import { useState } from "react";
+import { Button, Checkbox, Form, Input } from "antd";
 
 // Incribirse crear cuenta nueva
 
@@ -57,7 +56,6 @@ const Signup = () => {
       <Form.Item
         name="nickname"
         label="Nombre"
-        tooltip="Nombre completo"
         rules={[
           {
             required: true,
@@ -71,7 +69,6 @@ const Signup = () => {
       <Form.Item
         name="nickname"
         label="Apellido"
-        tooltip="Se debe añadir apellido"
         rules={[
           {
             required: true,
