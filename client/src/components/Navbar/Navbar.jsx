@@ -14,15 +14,15 @@ const items = [
     icon: <MailOutlined />,
   },
   {
-    label: <Link to="/dash">DashBoard</Link>,
-    key: "dash",
-    icon: <MailOutlined />,
-  },
-  {
     label: <Link to="/calendar">Calendario</Link>,
     key: "app",
     icon: <AppstoreOutlined />,
     // disabled: true,
+  },
+  {
+    label: <Link to="/dash">DashBoard</Link>,
+    key: "dash",
+    icon: <MailOutlined />,
   },
   {
     label: "Usuario",

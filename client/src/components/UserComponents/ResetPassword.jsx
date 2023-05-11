@@ -32,6 +32,10 @@ const tailFormItemLayout = {
     },
   },
 };
+const handleGoToHome = () => {
+  history.push("/");
+};
+
 const ResetPassword = () => {
   const [form] = Form.useForm();
   const onFinish = (values) => {
