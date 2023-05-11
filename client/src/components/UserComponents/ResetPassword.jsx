@@ -1,6 +1,6 @@
 import { Button, Checkbox, Form, Input } from "antd";
 
-// Reset pasword
+// Reset pasword components
 
 const formItemLayout = {
   labelCol: {

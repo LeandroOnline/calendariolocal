@@ -76,6 +76,10 @@ const Login = () => (
       <Link to="/signup"> Si no posees una cuenta hacé click aquí</Link>
       <br></br>
       <Button type="primary" htmlType="submit">
+        Iniciar seccion con google
+      </Button>
+      <br></br>
+      <Button type="primary" htmlType="submit">
         Ingresar
       </Button>
     </Form.Item>
