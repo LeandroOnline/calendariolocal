@@ -1,10 +1,10 @@
-import Login from "../../components/UserComponents/LoginForm";
+import LoginForm from "../../components/UserComponents/LoginForm";
 
 const LoginPage = () => {
   return (
     <div>
       <p>Estoy en el login page</p>
-      <Login />
+      <LoginForm />
     </div>
   );
 };
