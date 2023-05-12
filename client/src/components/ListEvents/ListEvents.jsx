@@ -8,13 +8,21 @@ const ListEvents = () => {
   const { events, GetEvents } = useGlobalStore();
 
   useEffect(() => {
-      GetEvents();
+    GetEvents();
   }, []);
+
+  console.log(events);
+  // [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
+  // {end,start,title,_id}
+  // {href,title,avatar,description,content}
 
   return (
     <div>
-      {events?.map((event,key) => (
-        <p key={key}>→ {event.title}</p>
+      {events?.map((event, key) => (
+        <div key={key}>
+          <p>→ {event.title}</p>
+          <p> {event.details} </p>
+        </div>
       ))}
     </div>
   );
