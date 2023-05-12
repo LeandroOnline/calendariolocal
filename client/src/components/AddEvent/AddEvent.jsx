@@ -6,14 +6,14 @@ const { RangePicker } = DatePicker;
 const CalendarDatePicker = () => {
   const [date, setDate] = useState(false);
   const [title, setTitle] = useState("");
-  const [detail, setDetail] = useState("");
+  const [details, setDetails] = useState("");
 
   const sendEvent = async () => {
     const event = {
       title,
       start: date[0],
       end: date[1],
-      detail,
+      details,
     };
     await axiosAddEvent(event);
   };
@@ -51,8 +51,8 @@ const CalendarDatePicker = () => {
       <input
         type="text"
         placeholder="Descripcion"
-        value={detail}
-        onChange={(e) => setDetail(e.target.value)}
+        value={details}
+        onChange={(e) => setDetails(e.target.value)}
       />
       <AutoComplete
         options={websiteOptions}
