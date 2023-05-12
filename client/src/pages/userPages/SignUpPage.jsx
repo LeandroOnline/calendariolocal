@@ -1,5 +1,3 @@
-// import Signup from "../../components/UserComponents/SignUp";
-
 import { Button, Checkbox, Form, Input } from "antd";
 
 // Incribirse crear cuenta nueva
