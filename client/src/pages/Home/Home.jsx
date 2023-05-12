@@ -7,7 +7,7 @@ import { Carousel } from "antd";
 const Home = () => {
   return (
     <div>
-      <h1>NombrePagina</h1>
+      <h1>Calendario Parana</h1>
       <h1>Esta es la pagina de entrada</h1>
       <h2>
         Enterate de todos los eventos de la ciudad y publica tus eventos GRATIS
