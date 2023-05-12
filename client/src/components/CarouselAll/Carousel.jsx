@@ -9,9 +9,6 @@ const contentStyle = {
 };
 
 const CarouselAll = (props) => {
-  console.log(props);
-  console.log(props.img);
-  console.log(props.img[0]);
 
   return (
     <Carousel autoplay>
