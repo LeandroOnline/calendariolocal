@@ -1,4 +1,6 @@
-import home from "./Home.module.css";
+import { Carousel } from "antd";
+// import home from "./Home.module.css";
+// import Carousel from "../../components/Carousel/Carousel";
 
 // Home con todos sus componentes
 

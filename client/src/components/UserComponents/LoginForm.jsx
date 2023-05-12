@@ -70,9 +70,14 @@ const Login = () => (
         span: 16,
       }}
     >
+      <br></br>
+      <Link to="/reset">¿Olvidaste tu contraseña?</Link>
+      <br></br>
       <Link to="/signup"> Si no posees una cuenta hacé click aquí</Link>
       <br></br>
-      <Link to="/login/reset">¿Olvidaste tu contraseña?</Link>
+      <Button type="primary" htmlType="submit">
+        Iniciar seccion con google
+      </Button>
       <br></br>
       <Button type="primary" htmlType="submit">
         Ingresar
