@@ -1,12 +1,13 @@
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../../components/CarouselAll/Carousel";
+import images5 from "../../assets/imgCarousel/images5.jpg";
 
-// Home con todos sus componentes
+// Pagina de entrada y HOME
 
 const Home = () => {
   return (
     <div>
+      <Carousel img={[images5]} />
       <h1>Calendario Parana</h1>
-      <Carousel />
       <h1>Esta es la pagina de entrada</h1>
       <h2>
         Enterate de todos los eventos de la ciudad y publica tus eventos GRATIS
