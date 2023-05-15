@@ -1,57 +1,23 @@
 import { Avatar, List, Space } from "antd";
 import React from "react";
-import useGlobalStore from "../../store/Store";
-import { useEffect } from "react";
 
-// // lista de eventos
-// const ListEvents = () => {
-//   console.log("ListEvent");
-
-// const { events, GetEvents } = useGlobalStore();
-
-//   useEffect(() => {
-//       GetEvents();
-//   }, []);
-
-//   return (
-//     <div>
-//       {events?.map((event,key) => (
-//         <p key={key}>→ {event.title}</p>
-//       ))}
-//     </div>
-//   );
-// };
-// export default ListEvents;
 const data = Array.from({
   length: 23,
 }).map((_, i) => ({
   href: "https://ant.design",
-  title: `ant design part ${i}`,
+  title: `Evento de ejemplo ${i}`,
   avatar: `https://xsgames.co/randomusers/avatar.php?g=pixel&key=${i}`,
-  description:
-    "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-  content:
-    "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
+  description: "Esta es la descripcion del evento.",
+  content: "Esto lo puedo eliminar o se puede dejar como campo opcional.",
+  vermas: "Click aqui para ver mas", // Vista de detalle del evento
 }));
-
 const IconText = ({ icon, text }) => (
   <Space>
     {React.createElement(icon)}
     {text}
   </Space>
 );
-
-const ListEvents = () => {
-  useEffect(() => {
-    GetEvents();
-  }, []);
-
-  const { events, GetEvents } = useGlobalStore();
-  // console.log(events);
-  //Aca funcion para formatiar los datos del back
-
-  return;
-
+const ListEvents = () => (
   <List
     itemLayout="vertical"
     size="large"
@@ -59,44 +25,22 @@ const ListEvents = () => {
       onChange: (page) => {
         console.log(page);
       },
-      pageSize: 3,
+      pageSize: 5,
     }}
     dataSource={data}
     footer={
       <div>
-        <b>ant design</b> footer part
+        <b>Calendario </b> Sobre nosotros click aqui
       </div>
     }
     renderItem={(item) => (
       <List.Item
         key={item.title}
-        actions={[
-          <IconText
-            icon={StarOutlined}
-            text="156"
-            key="list-vertical-star-o"
-          />,
-          <IconText
-            icon={LikeOutlined}
-            text="156"
-            key="list-vertical-like-o"
-          />,
-          <IconText
-            icon={MessageOutlined}
-            text="2"
-            key="list-vertical-message"
-          />,
-          <div>
-            {events?.map((event, key) => (
-              <p key={key}>→ {event.title}</p>
-            ))}
-          </div>,
-        ]}
         extra={
           <img
-            width={272}
+            width={240}
             alt="logo"
-            src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+            src="https://i.blogs.es/43bc2c/avatar-2/1366_2000.jpeg"
           />
         }
       >
@@ -108,30 +52,6 @@ const ListEvents = () => {
         {item.content}
       </List.Item>
     )}
-  />;
-};
+  />
+);
 export default ListEvents;
-
-// datos del back
-// const add = new Evento({
-//   title: req.body.title,
-//   start: req.body.start,
-//   end: req.body.end,
-//   details: req.body.details,
-// });
-
-// end
-// :
-// "2023-05-18T17:53:40.745Z"
-// start
-// :
-// "2023-05-17T17:53:33.745Z"
-// title
-// :
-// "Soy crack"
-// __v
-// :
-// 0
-// _id
-// :
-// "646271b1269fe59e376cab2b"
