@@ -34,7 +34,6 @@ const data = Array.from({
     "We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.",
 }));
 
-
 const IconText = ({ icon, text }) => (
   <Space>
     {React.createElement(icon)}
@@ -44,15 +43,14 @@ const IconText = ({ icon, text }) => (
 
 const ListEvents = () => {
   useEffect(() => {
-      GetEvents();
+    GetEvents();
   }, []);
 
   const { events, GetEvents } = useGlobalStore();
-  console.log(events);
+  // console.log(events);
   //Aca funcion para formatiar los datos del back
 
-  return 
-
+  return;
 
   <List
     itemLayout="vertical"
@@ -88,6 +86,11 @@ const ListEvents = () => {
             text="2"
             key="list-vertical-message"
           />,
+          <div>
+            {events?.map((event, key) => (
+              <p key={key}>→ {event.title}</p>
+            ))}
+          </div>,
         ]}
         extra={
           <img
@@ -105,7 +108,7 @@ const ListEvents = () => {
         {item.content}
       </List.Item>
     )}
-  />
+  />;
 };
 export default ListEvents;
 
@@ -118,17 +121,17 @@ export default ListEvents;
 // });
 
 // end
-// : 
+// :
 // "2023-05-18T17:53:40.745Z"
 // start
-// : 
+// :
 // "2023-05-17T17:53:33.745Z"
 // title
-// : 
+// :
 // "Soy crack"
 // __v
-// : 
+// :
 // 0
 // _id
-// : 
+// :
 // "646271b1269fe59e376cab2b"
