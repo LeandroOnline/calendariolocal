@@ -1,19 +1,19 @@
-// Funcion nuevo formato datos del back
-const reformat = (inputs) => {
-    const monthNumber = [
-    
-    ];
-  
-    const data = []; 
-    const netPerMonth = Array.from({ length: 12 }, () => 0);
-  
-    inputs.map((input) => {
-      const date = new Date(input.date);
-      const month = date.getMonth();
-      netPerMonth[month] += input.input;
-    });
-  
+// Funcion nuevo formato datos del back para los eventos
+const reformat = (events) => {
+  const data = [];
+  console.log(events);
+  events.map((event) =>
+    data.push({
+      href: "",
+      title: event.title,
+      //Agregar start end
+      avatar: `https://xsgames.co/randomusers/avatar.php?g=pixel&key=`,
+      description: event.start,
+      content: event.details, //descripcion
+      //vermas: "Click aqui para ver mas", // Vista de detalle del evento
+    })
+  );
 
-    return { data, netPerMonth };
-  };
-  export default reformat;
+  return data;
+};
+export default reformat;
