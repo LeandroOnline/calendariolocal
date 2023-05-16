@@ -7,8 +7,8 @@ const data = Array.from({
   href: "https://ant.design",
   title: `Evento de ejemplo ${i}`,
   avatar: `https://xsgames.co/randomusers/avatar.php?g=pixel&key=${i}`,
-  description: "Esta es la descripcion del evento.",
-  content: "Esto lo puedo eliminar o se puede dejar como campo opcional.",
+  description: "Aca me llega la fecha.", //Cambiar datos a fecha
+  content: "Esta es la descripcion del evento", //descripcion
   vermas: "Click aqui para ver mas", // Vista de detalle del evento
 }));
 const IconText = ({ icon, text }) => (
@@ -17,6 +17,7 @@ const IconText = ({ icon, text }) => (
     {text}
   </Space>
 );
+
 const ListEvents = () => (
   <List
     itemLayout="vertical"
