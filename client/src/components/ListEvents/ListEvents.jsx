@@ -47,7 +47,7 @@ const ListEvents = () => {
         onChange: (page) => {
           console.log(page);
         },
-        pageSize: 5,
+        pageSize: 6,
       }}
       dataSource={dataeventsformated}
       footer={
